@@ -7,9 +7,6 @@
     <h2 class="info" v-if="name === 'client'">
       Please refresh the page
     </h2>
-    <router-link class="button" to="/">
-      Home page
-    </router-link>
   </section>
 </template>
 

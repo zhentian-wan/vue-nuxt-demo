@@ -5,9 +5,6 @@
       {{message}}
     </h1>
     <input v-model="message">
-    <router-link class="button" to="/about">
-      About page
-    </router-link>
   </section>
 </template>
 
