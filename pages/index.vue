@@ -1,10 +1,9 @@
 <template>
   <section class="container">
     <img src="~static/logo.png" alt="Nuxt.js Logo" />
-    <h1 class="title">
-      {{message}}
-    </h1>
-    <input v-model="message">
+    <ul>
+      <li v-for="person in people">{{person.name}}</li>
+    </ul>
   </section>
 </template>
 
@@ -16,11 +15,15 @@
 </style>
 
 <script>
+
+import axios from 'axios'
+const api = `https://swapi-json-server-nvaxelgbew.now.sh/people`
+
   export default {
     data(){
-      return {
-        message: "Hello World!"
-      }
+      return axios.get(api).then((res) => ({
+        people: res.data
+      }))
     }
   }
 </script>
